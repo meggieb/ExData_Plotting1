@@ -1,4 +1,4 @@
-#read the data
+#read the data - assumes the unzipped file is in the working directory
 householdPower<-read.table("household_power_consumption.txt", sep=";", header=TRUE)
 housePwrDF<-as.data.frame(householdPower)
 head(housePwrDF)
