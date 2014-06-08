@@ -5,9 +5,11 @@ housePwrDF<-as.data.frame(householdPower)
 #convert columns to dates then subset the data
 housePwrDF$Date<-as.Date(housePwrDF$Date, "%d/%m/%Y")
 housePwrDFSubset<-subset(housePwrDF, Date=="2007-02-01" | Date=="2007-02-02")
+
+#convert date and time columns to datetime column
 housePwrDFSubset$DateTime <- as.POSIXct(paste(housePwrDFSubset$Date, housePwrDFSubset$Time), format="%Y-%m-%d %H:%M:%S")
 
-#convert Global Active Power to numeric
+#convert metrics to numeric
 housePwrDFSubset$Global_active_power<-as.numeric(as.character(housePwrDFSubset$Global_active_power))
 housePwrDFSubset$Voltage<-as.numeric(as.character(housePwrDFSubset$Voltage))
 housePwrDFSubset$Global_reactive_power<-as.numeric(as.character(housePwrDFSubset$Global_reactive_power))
