@@ -10,7 +10,6 @@ housePwrDFSubset$DateTime <- as.POSIXct(paste(housePwrDFSubset$Date, housePwrDFS
 #convert Global Active Power to numeric
 housePwrDFSubset$Global_active_power<-as.numeric(as.character(housePwrDFSubset$Global_active_power))
 housePwrDFSubset$Voltage<-as.numeric(as.character(housePwrDFSubset$Voltage))
-typeof(housePwrDFSubset$Voltage)
 housePwrDFSubset$Global_reactive_power<-as.numeric(as.character(housePwrDFSubset$Global_reactive_power))
 housePwrDFSubset$Sub_metering_1<-as.numeric(as.character(housePwrDFSubset$Sub_metering_1))
 housePwrDFSubset$Sub_metering_2<-as.numeric(as.character(housePwrDFSubset$Sub_metering_2))
