@@ -19,18 +19,6 @@ housePwrDFSubset$Sub_metering_1<-as.numeric(as.character(housePwrDFSubset$Sub_me
 housePwrDFSubset$Sub_metering_2<-as.numeric(as.character(housePwrDFSubset$Sub_metering_2))
 housePwrDFSubset$Sub_metering_3<-as.numeric(as.character(housePwrDFSubset$Sub_metering_3))
 
-par(mfrow=c(2,2), cex=.6)
-plot(housePwrDFSubset$DateTime, housePwrDFSubset$Global_active_power, type="l", ylab="Global Active Power (kilowatts)", xlab="")
-
-plot(housePwrDFSubset$DateTime, housePwrDFSubset$Voltage, type="l", ylab="Voltage", xlab="datetime")
-
-plot(housePwrDFSubset$DateTime,housePwrDFSubset$Sub_metering_1,type="l",col="black", ylab="Energy sub metering", xlab = "")
-lines(housePwrDFSubset$DateTime,housePwrDFSubset$Sub_metering_2,col="red")
-lines(housePwrDFSubset$DateTime,housePwrDFSubset$Sub_metering_3,col="blue")
-legend("topright",c("Sub_metering_1","Sub_metering_2","Sub_metering_3"), lty=c(1,1,1),lwd=c(2.5,2.5,2.5),col=c("black", "red", "blue"), bty="n", cex=.5)
-
-plot(housePwrDFSubset$DateTime, housePwrDFSubset$Global_reactive_power, type="l", ylab="Global_reactive_power", xlab="datetime")
-
 #create pdf
 png(file = "plot4.png", width=480, height=480, units = "px")
 par(mfrow=c(2,2), cex=.75)
